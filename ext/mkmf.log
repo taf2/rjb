@@ -1,0 +1,128 @@
+have_header: checking for jni.h... -------------------- yes
+
+"gcc -o conftest -I/Users/taf2/.rvm/rubies/ruby-1.9.2-p180/include/ruby-1.9.1/x86_64-darwin10.7.0 -I/Users/taf2/.rvm/rubies/ruby-1.9.2-p180/include/ruby-1.9.1/ruby/backward -I/Users/taf2/.rvm/rubies/ruby-1.9.2-p180/include/ruby-1.9.1 -I. -I"/System/Library/Frameworks/JavaVM.framework/Versions/CurrentJDK/Home//include" -I/opt/local/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE  -I/opt/local/include -O2 -arch x86_64 -fno-common -pipe -I"/System/Library/Frameworks/JavaVM.framework/Versions/CurrentJDK/Home//include" conftest.c  -L. -L/Users/taf2/.rvm/rubies/ruby-1.9.2-p180/lib -L. -L/opt/local/lib     -lruby.1.9.1-static  -lpthread -ldl -lobjc "
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: int main() {return 0;}
+/* end */
+
+"gcc -E -I/Users/taf2/.rvm/rubies/ruby-1.9.2-p180/include/ruby-1.9.1/x86_64-darwin10.7.0 -I/Users/taf2/.rvm/rubies/ruby-1.9.2-p180/include/ruby-1.9.1/ruby/backward -I/Users/taf2/.rvm/rubies/ruby-1.9.2-p180/include/ruby-1.9.1 -I. -I"/System/Library/Frameworks/JavaVM.framework/Versions/CurrentJDK/Home//include" -I/opt/local/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE  -I/opt/local/include -O2 -arch x86_64 -fno-common -pipe -I"/System/Library/Frameworks/JavaVM.framework/Versions/CurrentJDK/Home//include"  conftest.c -o conftest.i"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <jni.h>
+/* end */
+
+--------------------
+
+have_header: checking for dl.h... -------------------- no
+
+"gcc -E -I/Users/taf2/.rvm/rubies/ruby-1.9.2-p180/include/ruby-1.9.1/x86_64-darwin10.7.0 -I/Users/taf2/.rvm/rubies/ruby-1.9.2-p180/include/ruby-1.9.1/ruby/backward -I/Users/taf2/.rvm/rubies/ruby-1.9.2-p180/include/ruby-1.9.1 -I. -I"/System/Library/Frameworks/JavaVM.framework/Versions/CurrentJDK/Home//include" -I/opt/local/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE  -I/opt/local/include -O2 -arch x86_64 -fno-common -pipe -I"/System/Library/Frameworks/JavaVM.framework/Versions/CurrentJDK/Home//include"  conftest.c -o conftest.i"
+conftest.c:3:16: error: dl.h: No such file or directory
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <dl.h>
+/* end */
+
+--------------------
+
+have_header: checking for ruby/dl.h... -------------------- yes
+
+"gcc -E -I/Users/taf2/.rvm/rubies/ruby-1.9.2-p180/include/ruby-1.9.1/x86_64-darwin10.7.0 -I/Users/taf2/.rvm/rubies/ruby-1.9.2-p180/include/ruby-1.9.1/ruby/backward -I/Users/taf2/.rvm/rubies/ruby-1.9.2-p180/include/ruby-1.9.1 -I. -I"/System/Library/Frameworks/JavaVM.framework/Versions/CurrentJDK/Home//include" -I/opt/local/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE  -I/opt/local/include -O2 -arch x86_64 -fno-common -pipe -I"/System/Library/Frameworks/JavaVM.framework/Versions/CurrentJDK/Home//include"  conftest.c -o conftest.i"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <ruby/dl.h>
+/* end */
+
+--------------------
+
+have_func: checking for locale_charset() in iconv.h... -------------------- no
+
+"gcc -o conftest -I/Users/taf2/.rvm/rubies/ruby-1.9.2-p180/include/ruby-1.9.1/x86_64-darwin10.7.0 -I/Users/taf2/.rvm/rubies/ruby-1.9.2-p180/include/ruby-1.9.1/ruby/backward -I/Users/taf2/.rvm/rubies/ruby-1.9.2-p180/include/ruby-1.9.1 -I. -I"/System/Library/Frameworks/JavaVM.framework/Versions/CurrentJDK/Home//include" -I/opt/local/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE  -I/opt/local/include -O2 -arch x86_64 -fno-common -pipe -I"/System/Library/Frameworks/JavaVM.framework/Versions/CurrentJDK/Home//include" conftest.c  -L. -L/Users/taf2/.rvm/rubies/ruby-1.9.2-p180/lib -L. -L/opt/local/lib     -lruby.1.9.1-static  -lpthread -ldl -lobjc "
+conftest.c: In function ‘t’:
+conftest.c:7: error: ‘locale_charset’ undeclared (first use in this function)
+conftest.c:7: error: (Each undeclared identifier is reported only once
+conftest.c:7: error: for each function it appears in.)
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <iconv.h>
+4: 
+5: /*top*/
+6: int main() {return 0;}
+7: int t() { void ((*volatile p)()); p = (void ((*)()))locale_charset; return 0; }
+/* end */
+
+"gcc -o conftest -I/Users/taf2/.rvm/rubies/ruby-1.9.2-p180/include/ruby-1.9.1/x86_64-darwin10.7.0 -I/Users/taf2/.rvm/rubies/ruby-1.9.2-p180/include/ruby-1.9.1/ruby/backward -I/Users/taf2/.rvm/rubies/ruby-1.9.2-p180/include/ruby-1.9.1 -I. -I"/System/Library/Frameworks/JavaVM.framework/Versions/CurrentJDK/Home//include" -I/opt/local/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE  -I/opt/local/include -O2 -arch x86_64 -fno-common -pipe -I"/System/Library/Frameworks/JavaVM.framework/Versions/CurrentJDK/Home//include" conftest.c  -L. -L/Users/taf2/.rvm/rubies/ruby-1.9.2-p180/lib -L. -L/opt/local/lib     -lruby.1.9.1-static  -lpthread -ldl -lobjc "
+Undefined symbols for architecture x86_64:
+  "_locale_charset", referenced from:
+      _t in ccKmAtd0.o
+ld: symbol(s) not found for architecture x86_64
+collect2: ld returned 1 exit status
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <iconv.h>
+4: 
+5: /*top*/
+6: int main() {return 0;}
+7: int t() { locale_charset(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for nl_langinfo() in langinfo.h... -------------------- yes
+
+"gcc -o conftest -I/Users/taf2/.rvm/rubies/ruby-1.9.2-p180/include/ruby-1.9.1/x86_64-darwin10.7.0 -I/Users/taf2/.rvm/rubies/ruby-1.9.2-p180/include/ruby-1.9.1/ruby/backward -I/Users/taf2/.rvm/rubies/ruby-1.9.2-p180/include/ruby-1.9.1 -I. -I"/System/Library/Frameworks/JavaVM.framework/Versions/CurrentJDK/Home//include" -I/opt/local/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE  -I/opt/local/include -O2 -arch x86_64 -fno-common -pipe -I"/System/Library/Frameworks/JavaVM.framework/Versions/CurrentJDK/Home//include" conftest.c  -L. -L/Users/taf2/.rvm/rubies/ruby-1.9.2-p180/lib -L. -L/opt/local/lib     -lruby.1.9.1-static  -lpthread -ldl -lobjc "
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <langinfo.h>
+4: 
+5: /*top*/
+6: int main() {return 0;}
+7: int t() { void ((*volatile p)()); p = (void ((*)()))nl_langinfo; return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for setlocale() in locale.h... -------------------- yes
+
+"gcc -o conftest -I/Users/taf2/.rvm/rubies/ruby-1.9.2-p180/include/ruby-1.9.1/x86_64-darwin10.7.0 -I/Users/taf2/.rvm/rubies/ruby-1.9.2-p180/include/ruby-1.9.1/ruby/backward -I/Users/taf2/.rvm/rubies/ruby-1.9.2-p180/include/ruby-1.9.1 -I. -I"/System/Library/Frameworks/JavaVM.framework/Versions/CurrentJDK/Home//include" -I/opt/local/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE  -I/opt/local/include -O2 -arch x86_64 -fno-common -pipe -I"/System/Library/Frameworks/JavaVM.framework/Versions/CurrentJDK/Home//include" conftest.c  -L. -L/Users/taf2/.rvm/rubies/ruby-1.9.2-p180/lib -L. -L/opt/local/lib     -lruby.1.9.1-static  -lpthread -ldl -lobjc "
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <locale.h>
+4: 
+5: /*top*/
+6: int main() {return 0;}
+7: int t() { void ((*volatile p)()); p = (void ((*)()))setlocale; return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for getenv()... -------------------- yes
+
+"gcc -o conftest -I/Users/taf2/.rvm/rubies/ruby-1.9.2-p180/include/ruby-1.9.1/x86_64-darwin10.7.0 -I/Users/taf2/.rvm/rubies/ruby-1.9.2-p180/include/ruby-1.9.1/ruby/backward -I/Users/taf2/.rvm/rubies/ruby-1.9.2-p180/include/ruby-1.9.1 -I. -I"/System/Library/Frameworks/JavaVM.framework/Versions/CurrentJDK/Home//include" -I/opt/local/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE  -I/opt/local/include -O2 -arch x86_64 -fno-common -pipe -I"/System/Library/Frameworks/JavaVM.framework/Versions/CurrentJDK/Home//include" conftest.c  -L. -L/Users/taf2/.rvm/rubies/ruby-1.9.2-p180/lib -L. -L/opt/local/lib     -lruby.1.9.1-static  -lpthread -ldl -lobjc "
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: /*top*/
+4: int main() {return 0;}
+5: int t() { void ((*volatile p)()); p = (void ((*)()))getenv; return 0; }
+/* end */
+
+--------------------
+
