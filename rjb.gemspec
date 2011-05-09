@@ -2,11 +2,13 @@
 Gem::Specification.new do |s|
   s.name = %q{rjb}
   s.version = "1.3.4"
+  s.platform = Gem::Platform::RUBY
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["arton"]
   s.date = %q{2010-11-22}
   s.description = %q{RJB is a bridge program that connect between Ruby and Java with Java Native Interface.}
+  s.extensions << 'ext/extconf.rb'
 
   s.email = %q{artonx@gmail.com}
   s.files = ["test/test.rb"]
